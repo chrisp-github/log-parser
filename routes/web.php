@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', 'LogController@show');
+Route::get('processlog', function() {
+    return view('processing');
 });
+Route::post('parselog', 'LogController@parseLog');
